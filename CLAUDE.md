@@ -19,6 +19,8 @@ Pushing to `main` builds and deploys to GitHub Pages via `.github/workflows/depl
 | Homepage (hero, philosophy, Instagram band) | `src/index.njk` |
 | Homepage program cards | `src/_data/programs.json` |
 | Homepage hero graphic (court-line illustration; tilt/position in `.hero-court` in `style.css`) | `src/images/hero-court.svg` |
+| Staff page people (name, role, team, photo, bio paragraphs; `"featured": true` = director spotlight) | `src/_data/staff.json` |
+| Sponsor logos (name, logo, optional `url`) | `src/_data/sponsors.json`, logos in `src/images/sponsors/` |
 | Every other page | `src/pages/<slug>.html` |
 | Old blog posts | `src/posts/<slug>.html` |
 | Top navigation menu | `src/_data/navigation.json` |
@@ -32,7 +34,8 @@ Pushing to `main` builds and deploys to GitHub Pages via `.github/workflows/depl
 Page slugs are inherited from WordPress and don't always match the title —
 look up the page by its `title:` or by the nav entry in `navigation.json`:
 
-- `posts-page.html` → Sponsors
+- `coaches.html` → Staff (URL stays `/coaches/`; content comes from `staff.json`)
+- `posts-page.html` → Sponsors (logos come from `sponsors.json`)
 - `behavior-guidelines.html` → Code of Conduct
 - `tryouts-2.html` → Tryouts (current); `tryouts.html` is an older Fall Tryouts page
 - `17u-regional.html` → 18U Regional Level
@@ -70,7 +73,8 @@ Content uses plain HTML plus a few CSS classes (kept from WordPress, styled in `
 
 Every page gets a dark page-header band with its title automatically, so don't start page content with an `<h1>` or a repeat of the title. Do start the content with an `<h2>` subheading (every page follows this pattern); use `<h2>` for the page's main sections and `<h3>`/`<h4>` below that.
 
-- **Coach / player card** (`coaches.html`, team pages): `.wp-block-columns > .wp-block-column.roster-item` containing a photo column and a name column (`<h4>` name, then `<p>` role shown in green, then optional `<p>` details). Photos are cropped to a circle automatically.
+- **Staff member**: add/edit an entry in `src/_data/staff.json` (photo ideally portrait 4:5, ≥600px wide). **Sponsor**: add an entry to `src/_data/sponsors.json` with a trimmed, transparent-background logo in `src/images/sponsors/`.
+- **Player card** (team pages): `.wp-block-columns > .wp-block-column.roster-item` containing a photo column and a name column (`<h4>` name, then `<p>` role shown in green, then optional `<p>` details). Photos are cropped to a circle automatically.
 - **Table** (rosters, tournament schedules, tryout times): `<figure class="wp-block-table"><table>…</table></figure>`. Edit rows directly.
 - **Image**: `<figure class="wp-block-image"><img src="/images/x.jpg" alt="Describe it" loading="lazy"></figure>`. Add `aligncenter` to center.
 - **Two columns**: `<div class="wp-block-columns"><div class="wp-block-column">…</div><div class="wp-block-column">…</div></div>` (stacks on mobile).

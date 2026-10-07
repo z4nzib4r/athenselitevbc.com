@@ -4,7 +4,7 @@
     "title": "About Us",
     "children": [
       { "title": "Our Philosophy", "url": "/our-philosophy/" },
-      { "title": "Coaches", "url": "/coaches/" },
+      { "title": "Staff", "url": "/coaches/" },
       { "title": "Facilities", "url": "/facilities/" },
       { "title": "Code of Conduct", "url": "/behavior-guidelines/" },
       { "title": "Sponsors", "url": "/posts-page/" },
