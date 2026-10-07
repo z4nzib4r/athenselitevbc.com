@@ -31,7 +31,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
 
 body {
   margin: 0;
@@ -131,13 +131,14 @@ a:hover { color: var(--green-dark); }
 /* ---------- Header / navigation ---------- */
 
 .site-header {
-  position: sticky;
+  /* Floats transparently over the hero / page header until the page scrolls. */
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
-  background: rgba(11, 12, 11, 0.88);
-  -webkit-backdrop-filter: saturate(160%) blur(16px);
-  backdrop-filter: saturate(160%) blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background: transparent;
+  border-bottom: 1px solid transparent;
   transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 .site-header::before {
@@ -148,18 +149,8 @@ a:hover { color: var(--green-dark); }
   background: linear-gradient(90deg, var(--green), var(--green-bright));
 }
 
-/* Home: header floats over the hero until the page scrolls. */
-.home .site-header {
-  position: fixed;
-  left: 0;
-  right: 0;
-  background: transparent;
-  border-bottom-color: transparent;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-}
-.home .site-header.is-scrolled,
-.home.menu-open .site-header {
+.site-header.is-scrolled,
+.menu-open .site-header {
   background: rgba(11, 12, 11, 0.88);
   border-bottom-color: rgba(255, 255, 255, 0.07);
   -webkit-backdrop-filter: saturate(160%) blur(16px);
@@ -350,17 +341,13 @@ a:hover { color: var(--green-dark); }
   .submenu-toggle[aria-expanded="true"] + .submenu { display: block; }
   .nav-cta-item { margin: 24px 0 0; border-bottom: 0 !important; }
   /* backdrop-filter would trap the fixed menu inside the header, so use a solid bar on small screens */
-  .site-header,
-  .home .site-header.is-scrolled,
-  .home.menu-open .site-header {
+  .site-header.is-scrolled,
+  .menu-open .site-header {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
+    background: var(--ink);
   }
-  .site-header,
-  .home .site-header.is-scrolled,
-  .home.menu-open .site-header { background: rgba(11, 12, 11, 0.97); }
-  .home .site-header:not(.is-scrolled) { background: transparent; }
-  .home.menu-open .site-header { background: var(--ink); }
+  .menu-open .site-header { background: var(--ink); }
   .nav-cta-item .button { width: 100%; justify-content: center; padding: 16px; font-size: 1rem; }
   body.menu-open { overflow: hidden; }
 }
@@ -525,7 +512,7 @@ a:hover { color: var(--green-dark); }
     radial-gradient(90% 160% at 100% 0%, rgba(37, 179, 82, 0.22) 0%, rgba(37, 179, 82, 0) 60%),
     var(--ink);
   color: #fff;
-  padding: 88px 0 72px;
+  padding: calc(var(--header-h) + 88px) 0 72px;
 }
 .page-header::after { /* subtle court-line texture */
   content: "";
@@ -550,7 +537,7 @@ a:hover { color: var(--green-dark); }
   max-width: 18ch;
 }
 .page-intro { margin: 20px 0 0; max-width: 620px; color: rgba(255, 255, 255, 0.78); font-size: 1.15rem; }
-@media (max-width: 600px) { .page-header { padding: 64px 0 48px; } }
+@media (max-width: 600px) { .page-header { padding: calc(var(--header-h) + 56px) 0 48px; } }
 
 /* ---------- Page content ---------- */
 
