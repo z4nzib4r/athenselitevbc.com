@@ -361,10 +361,35 @@ a:hover { color: var(--green-dark); }
   display: flex;
   align-items: flex-end;
   color: #fff;
-  background: var(--ink);
+  background:
+    radial-gradient(70% 90% at 75% 40%, rgba(37, 179, 82, 0.28) 0%, rgba(37, 179, 82, 0) 60%),
+    var(--ink);
   overflow: hidden;
   isolation: isolate;
 }
+/* Court-line illustration, tilted into perspective behind the headline. */
+.hero-court {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  perspective: 900px;
+  overflow: hidden;
+}
+.hero-court img {
+  position: absolute;
+  width: 78%;
+  max-width: none;
+  left: 34%;
+  top: 14%;
+  transform: rotateX(58deg) rotateZ(-24deg);
+}
+@media (max-width: 1000px) {
+  .hero-court img { width: 125%; left: 12%; top: 4%; }
+}
+@media (max-width: 700px) {
+  .hero-court img { width: 150%; left: 5%; top: 8%; }
+}
+/* Alternative: a full-bleed photo (<img class="hero-media" src="...">) in place of .hero-court. */
 .hero-media {
   position: absolute;
   inset: 0;
@@ -380,8 +405,8 @@ a:hover { color: var(--green-dark); }
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(11, 12, 11, 0.9) 0%, rgba(11, 12, 11, 0.55) 45%, rgba(11, 12, 11, 0) 100%),
-    linear-gradient(0deg, rgba(11, 12, 11, 0.7) 0%, rgba(11, 12, 11, 0) 40%);
+    linear-gradient(90deg, rgba(11, 12, 11, 0.85) 0%, rgba(11, 12, 11, 0.35) 50%, rgba(11, 12, 11, 0) 100%),
+    linear-gradient(0deg, rgba(11, 12, 11, 0.8) 0%, rgba(11, 12, 11, 0) 35%);
 }
 .hero-content { width: 100%; padding-top: calc(var(--header-h) + 80px); padding-bottom: 96px; }
 .hero h1 {

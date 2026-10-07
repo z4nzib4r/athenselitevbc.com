@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-200 -200 2200 1300">
+  <!-- Top-down volleyball court (18m x 9m at 100 units per metre); the homepage CSS tilts it into perspective. -->
+  <g stroke="#fff" stroke-opacity="0.75" stroke-width="7" fill="none">
+    <rect x="0" y="0" width="1800" height="900"/>
+    <line x1="600" y1="0" x2="600" y2="900"/>
+    <line x1="1200" y1="0" x2="1200" y2="900"/>
+  </g>
+  <!-- Attack-line extensions -->
+  <g stroke="#fff" stroke-opacity="0.35" stroke-width="5" stroke-dasharray="20 22">
+    <line x1="600" y1="-150" x2="600" y2="0"/><line x1="600" y1="900" x2="600" y2="1050"/>
+    <line x1="1200" y1="-150" x2="1200" y2="0"/><line x1="1200" y1="900" x2="1200" y2="1050"/>
+  </g>
+  <!-- Net -->
+  <line x1="900" y1="-120" x2="900" y2="1020" stroke="#25b352" stroke-width="10"/>
+</svg>

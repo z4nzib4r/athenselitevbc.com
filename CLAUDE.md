@@ -18,6 +18,7 @@ Pushing to `main` builds and deploys to GitHub Pages via `.github/workflows/depl
 |---|---|
 | Homepage (hero, philosophy, Instagram band) | `src/index.njk` |
 | Homepage program cards | `src/_data/programs.json` |
+| Homepage hero graphic (court-line illustration; tilt/position in `.hero-court` in `style.css`) | `src/images/hero-court.svg` |
 | Every other page | `src/pages/<slug>.html` |
 | Old blog posts | `src/posts/<slug>.html` |
 | Top navigation menu | `src/_data/navigation.json` |
