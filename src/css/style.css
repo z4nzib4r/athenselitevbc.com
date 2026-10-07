@@ -581,6 +581,7 @@ a:hover { color: var(--green-dark); }
   padding-bottom: 112px;
 }
 .content > :first-child { margin-top: 0; }
+.content h2:first-child { margin-top: 0; } /* opening subheading, even inside a wrapper block */
 
 .content h2,
 .content h3 { color: var(--ink); }

@@ -68,7 +68,7 @@ description: "..."   # optional: meta description for search engines
 
 Content uses plain HTML plus a few CSS classes (kept from WordPress, styled in `style.css`). Copy an existing example when adding similar content:
 
-Every page gets a dark page-header band with its title automatically, so don't start page content with an `<h1>` or a repeat of the title.
+Every page gets a dark page-header band with its title automatically, so don't start page content with an `<h1>` or a repeat of the title. Do start the content with an `<h2>` subheading (every page follows this pattern); use `<h2>` for the page's main sections and `<h3>`/`<h4>` below that.
 
 - **Coach / player card** (`coaches.html`, team pages): `.wp-block-columns > .wp-block-column.roster-item` containing a photo column and a name column (`<h4>` name, then `<p>` role shown in green, then optional `<p>` details). Photos are cropped to a circle automatically.
 - **Table** (rosters, tournament schedules, tryout times): `<figure class="wp-block-table"><table>…</table></figure>`. Edit rows directly.
