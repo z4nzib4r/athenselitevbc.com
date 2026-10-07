@@ -928,22 +928,94 @@ figcaption { color: var(--muted); font-size: 0.875rem; margin-top: 0.75em; }
 }
 .content .staff-card h3 { margin: 0; font-size: 1.2rem; }
 .staff-role { margin: 2px 0 0 !important; color: var(--muted); font-size: 0.92rem; }
-.staff-bio { margin-top: 16px; border-top: 1px solid var(--line); }
-.staff-bio summary {
+.staff-bio-open {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 14px;
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px 0 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: none;
+  font: inherit;
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--green);
   cursor: pointer;
-  list-style: none;
 }
-.staff-bio summary::-webkit-details-marker { display: none; }
-.staff-bio summary::after { content: "+"; font-size: 1.2rem; transition: transform 0.2s var(--ease); }
-.staff-bio[open] summary::after { transform: rotate(45deg); }
-.staff-bio p { margin: 12px 0 0 !important; font-size: 0.92rem; line-height: 1.6; color: var(--text); }
+.staff-bio-open::after { content: "\2192"; transition: transform 0.2s var(--ease); }
+.staff-bio-open:hover { color: var(--green-dark); }
+.staff-bio-open:hover::after { transform: translateX(4px); }
+
+/* Bio pop-up (native <dialog>) */
+.bio-modal {
+  width: min(760px, calc(100% - 32px));
+  max-height: min(86vh, 760px);
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+.bio-modal[open] { display: flex; animation: bio-in 0.25s var(--ease); }
+.bio-modal::backdrop { background: rgba(11, 12, 11, 0.7); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+@keyframes bio-in { from { opacity: 0; transform: translateY(12px) scale(0.98); } }
+.bio-modal-inner {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 28px;
+  padding: 32px;
+  overflow-y: auto;
+  width: 100%;
+}
+.bio-modal-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  position: sticky; /* stays in view while a long bio scrolls */
+  top: 0;
+}
+.content .bio-modal h3 {
+  font-family: var(--display-font);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 2.1rem;
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 0;
+}
+.bio-modal .staff-role { margin-top: 6px !important; }
+.bio-modal-text { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line); }
+.bio-modal-text p { margin: 0 0 1em; font-size: 0.98rem; line-height: 1.7; }
+.bio-modal-text p:last-child { margin-bottom: 0; }
+.bio-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.bio-modal-close:hover { background: var(--line); }
+body.modal-open { overflow: hidden; }
+@media (max-width: 640px) {
+  .bio-modal { width: 100%; max-width: none; max-height: 92vh; margin: auto 0 0; border-radius: 20px 20px 0 0; }
+  .bio-modal-inner { grid-template-columns: 1fr; gap: 18px; padding: 24px 20px 32px; }
+  .bio-modal-photo { width: 120px; position: static; }
+}
 
 /* ---------- Footer ---------- */
 

@@ -21,6 +21,7 @@ permalink: "/coaches/"
 <h2>Coaches &amp; Trainers</h2>
 <div class="staff-grid">
   {%- for person in staff | rejectattr("featured") %}
+  {%- set bioId = "bio-" + (person.name | slugify) %}
   <article class="staff-card">
     <img class="staff-photo" src="{{ person.photo }}" alt="{{ person.name }}" loading="lazy">
     <div class="staff-body">
@@ -28,14 +29,50 @@ permalink: "/coaches/"
       <h3>{{ person.name }}</h3>
       <p class="staff-role">{{ person.role }}</p>
       {%- if person.bio.length %}
-      <details class="staff-bio">
-        <summary>Read bio</summary>
-        {%- for para in person.bio %}
-        <p>{{ para | safe }}</p>
-        {%- endfor %}
-      </details>
+      <button type="button" class="staff-bio-open" data-dialog="{{ bioId }}" aria-haspopup="dialog">Read bio</button>
       {%- endif %}
     </div>
   </article>
   {%- endfor %}
 </div>
+
+{#- One pop-up bio per coach; opened by the "Read bio" buttons above. #}
+{%- for person in staff | rejectattr("featured") %}
+{%- if person.bio.length %}
+<dialog class="bio-modal" id="bio-{{ person.name | slugify }}" aria-labelledby="bio-{{ person.name | slugify }}-name">
+  <button type="button" class="bio-modal-close" aria-label="Close">&times;</button>
+  <div class="bio-modal-inner">
+    <img class="bio-modal-photo" src="{{ person.photo }}" alt="" loading="lazy">
+    <div>
+      {% if person.team %}<span class="staff-team">{{ person.team }}</span>{% endif %}
+      <h3 id="bio-{{ person.name | slugify }}-name">{{ person.name }}</h3>
+      <p class="staff-role">{{ person.role }}</p>
+      <div class="bio-modal-text">
+        {%- for para in person.bio %}
+        <p>{{ para | safe }}</p>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</dialog>
+{%- endif %}
+{%- endfor %}
+
+<script>
+  (function () {
+    document.querySelectorAll(".staff-bio-open").forEach(function (btn) {
+      var dialog = document.getElementById(btn.dataset.dialog);
+      if (!dialog || !dialog.showModal) return;
+      btn.addEventListener("click", function () {
+        dialog.showModal();
+        document.body.classList.add("modal-open");
+      });
+    });
+    document.querySelectorAll(".bio-modal").forEach(function (dialog) {
+      dialog.querySelector(".bio-modal-close").addEventListener("click", function () { dialog.close(); });
+      // Click on the dimmed backdrop (outside the panel) closes it.
+      dialog.addEventListener("click", function (e) { if (e.target === dialog) dialog.close(); });
+      dialog.addEventListener("close", function () { document.body.classList.remove("modal-open"); });
+    });
+  })();
+</script>

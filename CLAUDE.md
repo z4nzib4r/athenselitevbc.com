@@ -19,7 +19,7 @@ Pushing to `main` builds and deploys to GitHub Pages via `.github/workflows/depl
 | Homepage (hero, philosophy, Instagram band) | `src/index.njk` |
 | Homepage program cards | `src/_data/programs.json` |
 | Homepage hero graphic (court-line illustration; tilt/position in `.hero-court` in `style.css`) | `src/images/hero-court.svg` |
-| Staff page people (name, role, team, photo, bio paragraphs; `"featured": true` = director spotlight) | `src/_data/staff.json` |
+| Staff page people (name, role, team, photo, bio paragraphs; `"featured": true` = director spotlight with the bio shown in full; everyone else's bio opens in a pop-up from "Read bio") | `src/_data/staff.json` |
 | Sponsor logos (name, logo, optional `url`) | `src/_data/sponsors.json`, logos in `src/images/sponsors/` |
 | Every other page | `src/pages/<slug>.html` |
 | Old blog posts | `src/posts/<slug>.html` |
