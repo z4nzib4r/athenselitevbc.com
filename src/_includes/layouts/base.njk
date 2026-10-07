@@ -27,7 +27,7 @@
         {%- for item in navigation %}
         {%- if item.children %}
         <li class="has-submenu">
-          <button type="button" class="submenu-toggle" aria-expanded="false">{{ item.title }}</button>
+          <button type="button" class="submenu-toggle{% if (navigation | navParent(page.url)) == item.title %} is-current{% endif %}" aria-expanded="false">{{ item.title }}</button>
           <ul class="submenu">
             {%- for child in item.children %}
             <li><a href="{{ child.url }}"{% if child.url == page.url %} aria-current="page"{% endif %}>{{ child.title }}</a></li>

@@ -1,10 +1,10 @@
 ---
 layout: layouts/base.njk
 ---
-{%- set kicker = eyebrow or (navigation | navParent(page.url)) %}
+{%- set kicker = eyebrow or (navigation | navParent(page.url)) or site.shortName %}
 <header class="page-header">
   <div class="container">
-    {% if kicker %}<p class="eyebrow">{{ kicker }}</p>{% endif %}
+    <p class="eyebrow">{{ kicker }}</p>
     <h1>{{ heading or title }}</h1>
     {% if intro %}<p class="page-intro">{{ intro }}</p>{% endif %}
   </div>
