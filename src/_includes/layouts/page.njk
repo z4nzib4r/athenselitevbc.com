@@ -1,0 +1,7 @@
+---
+layout: layouts/base.njk
+---
+<article class="container content">
+  {% if not hideTitle %}<h1 class="page-title">{{ title }}</h1>{% endif %}
+  {{ content | safe }}
+</article>

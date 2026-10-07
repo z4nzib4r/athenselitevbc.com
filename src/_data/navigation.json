@@ -1,0 +1,29 @@
+[
+  { "title": "Home", "url": "/" },
+  {
+    "title": "About Us",
+    "children": [
+      { "title": "Our Philosophy", "url": "/our-philosophy/" },
+      { "title": "Coaches", "url": "/coaches/" },
+      { "title": "Facilities", "url": "/facilities/" },
+      { "title": "Code of Conduct", "url": "/behavior-guidelines/" },
+      { "title": "Sponsors", "url": "/posts-page/" },
+      { "title": "Scholarships", "url": "/scholarships/" }
+    ]
+  },
+  {
+    "title": "Club Teams",
+    "children": [
+      { "title": "Tryouts", "url": "/tryouts-2/" },
+      { "title": "18U Regional Level", "url": "/17u-regional/" },
+      { "title": "15U American Level", "url": "/14u-regional/" },
+      { "title": "14U Regional Level", "url": "/13u-regional/" }
+    ]
+  },
+  { "title": "In-House League", "url": "/leagues/" },
+  { "title": "Beach", "url": "/beach/" },
+  { "title": "Lessons", "url": "/lessons/" },
+  { "title": "Blog", "url": "/blog/" },
+  { "title": "Shop", "url": "https://athenselitevbc.myshopify.com/", "external": true },
+  { "title": "FAQ", "url": "/frequently-asked-questions/" }
+]

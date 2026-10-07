@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title and page.url != "/" %}{{ title }} | {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:image" content="{{ site.url }}/images/hero-bg-1.jpg">
+  <link rel="icon" href="/images/cropped-icon-1.png">
+  <link rel="apple-touch-icon" href="/images/cropped-icon-1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="{{ bodyClass }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-logo" href="/"><img src="/images/athens-elite-logo.png" alt="{{ site.shortName }}" width="144" height="63"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
+        <span class="nav-toggle-bar"></span><span class="visually-hidden">Menu</span>
+      </button>
+      <ul class="nav-menu" id="main-menu">
+        {%- for item in navigation %}
+        {%- if item.children %}
+        <li class="has-submenu">
+          <button type="button" class="submenu-toggle" aria-expanded="false">{{ item.title }}</button>
+          <ul class="submenu">
+            {%- for child in item.children %}
+            <li><a href="{{ child.url }}"{% if child.url == page.url %} aria-current="page"{% endif %}>{{ child.title }}</a></li>
+            {%- endfor %}
+          </ul>
+        </li>
+        {%- else %}
+        <li><a href="{{ item.url }}"{% if item.external %} target="_blank" rel="noopener"{% endif %}{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {%- endif %}
+        {%- endfor %}
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <img src="/images/athens-elite-logo.png" alt="{{ site.shortName }}" width="144" height="63" class="footer-logo">
+    <p>{{ site.name }} &middot; {{ site.location }}</p>
+    <p>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a> &middot;
+      <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a> &middot;
+      <a href="{{ site.shop }}" target="_blank" rel="noopener">Shop</a>
+    </p>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.querySelector(".nav-toggle");
+      var menu = document.getElementById("main-menu");
+      toggle.addEventListener("click", function () {
+        var open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!open));
+        menu.classList.toggle("is-open", !open);
+      });
+      document.querySelectorAll(".submenu-toggle").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var open = btn.getAttribute("aria-expanded") === "true";
+          document.querySelectorAll(".submenu-toggle").forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
+          btn.setAttribute("aria-expanded", String(!open));
+        });
+      });
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".has-submenu")) {
+          document.querySelectorAll(".submenu-toggle").forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

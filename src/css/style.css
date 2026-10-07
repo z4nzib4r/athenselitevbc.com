@@ -1,0 +1,372 @@
+/* ==========================================================================
+   Athens Elite VBC — site styles
+   Brand colors and fonts live in the variables below.
+   ========================================================================== */
+
+:root {
+  --green: #1d9341;
+  --green-dark: #146b2f;
+  --black: #000;
+  --text: #212529;
+  --muted: #6c757d;
+  --border: #ddd;
+  --bg: #fff;
+  --bg-alt: #f6f7f6;
+  --heading-font: Impact, "Anton", "Arial Narrow Bold", sans-serif;
+  --body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --max-width: 1140px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+img, video { max-width: 100%; height: auto; }
+
+a { color: var(--green); }
+a:hover { color: var(--green-dark); }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--green);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 100;
+}
+.skip-link:focus { left: 0; }
+
+/* ---------- Header / navigation ---------- */
+
+.site-header {
+  background: var(--black);
+  border-top: 6px solid var(--green);
+  position: relative;
+  z-index: 50;
+}
+.home .site-header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background: transparent;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 8px 16px;
+}
+.nav-logo img { display: block; width: 144px; height: auto; }
+
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-menu > li { position: relative; }
+
+.nav-menu a,
+.submenu-toggle {
+  display: block;
+  padding: 8px 12px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.nav-menu a:hover,
+.submenu-toggle:hover,
+.nav-menu a[aria-current="page"] { color: #fff; }
+
+.submenu-toggle::after {
+  content: "";
+  display: inline-block;
+  margin-left: 6px;
+  vertical-align: 0.2em;
+  border-top: 0.35em solid;
+  border-left: 0.35em solid transparent;
+  border-right: 0.35em solid transparent;
+}
+
+.submenu {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+.submenu a { color: var(--text); padding: 6px 20px; }
+.submenu a:hover,
+.submenu a[aria-current="page"] { color: #fff; background: var(--green); }
+
+.submenu-toggle[aria-expanded="true"] + .submenu { display: block; }
+@media (hover: hover) and (min-width: 992px) {
+  .has-submenu:hover .submenu { display: block; }
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+.nav-toggle-bar,
+.nav-toggle-bar::before,
+.nav-toggle-bar::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+}
+.nav-toggle-bar::before,
+.nav-toggle-bar::after { content: ""; position: absolute; left: 0; }
+.nav-toggle-bar::before { top: -7px; }
+.nav-toggle-bar::after { top: 7px; }
+
+@media (max-width: 991px) {
+  .home .site-header { position: relative; background: var(--black); }
+  .nav-toggle { display: block; }
+  .nav-menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px 0;
+  }
+  .nav-menu.is-open { display: flex; }
+  .submenu-toggle { width: 100%; text-align: left; }
+  .submenu {
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    padding: 0 0 0 16px;
+  }
+  .submenu a { color: rgba(255, 255, 255, 0.75); }
+}
+
+/* ---------- Home hero ---------- */
+
+.hero {
+  min-height: 730px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-start;
+  color: #fff;
+}
+.hero-content {
+  padding: 220px 40px 80px;
+  width: 70%;
+}
+.hero h1 {
+  font-family: var(--heading-font);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 55px;
+  line-height: 58px;
+  margin: 0 0 16px;
+}
+.hero p { font-size: 1.1rem; max-width: 640px; }
+
+@media (max-width: 991px) {
+  .hero { min-height: 560px; }
+  .hero-content { padding: 60px 20px; width: 100%; }
+  .hero h1 { font-size: 44px; line-height: 48px; }
+}
+
+.instagram-cta { text-align: center; padding-top: 60px; padding-bottom: 60px; }
+.instagram-cta h2 { font-family: var(--body-font); font-size: 2rem; text-transform: none; margin-bottom: 12px; }
+
+/* ---------- Buttons ---------- */
+
+.button,
+.wp-block-button__link,
+.wp-element-button {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.button:hover,
+.wp-block-button__link:hover { background: var(--green-dark); color: #fff; }
+
+.wp-block-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 1.5em 0; }
+
+/* ---------- Page content ---------- */
+
+.content { padding-top: 48px; padding-bottom: 80px; }
+
+.page-title,
+.content h2,
+.content h3 {
+  font-family: var(--heading-font);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--black);
+  line-height: 1.1;
+}
+.page-title { font-size: 48px; margin: 0 0 32px; }
+.content h2 { font-size: 60px; margin: 1em 0 0.6em; }
+.content h3 { font-size: 40px; margin: 1em 0 0.6em; }
+.content h2:first-child,
+.content h3:first-child { margin-top: 0; }
+.content h4 { font-size: 1.4rem; margin: 1.2em 0 0.4em; }
+.content h5 {
+  text-transform: uppercase;
+  font-size: 16px;
+  color: var(--green);
+  letter-spacing: 4px;
+  margin: 20px 0 8px;
+}
+
+@media (max-width: 767px) {
+  .page-title { font-size: 38px; }
+  .content h2 { font-size: 40px; }
+  .content h3 { font-size: 30px; }
+}
+
+.post-date { color: var(--muted); margin-top: -20px; }
+
+.has-text-align-center { text-align: center; }
+.has-text-align-right { text-align: right; }
+
+/* Images */
+.wp-block-image { margin: 0 0 1.5em; }
+.wp-block-image img { display: block; }
+.wp-block-image.aligncenter,
+.aligncenter { margin-left: auto; margin-right: auto; text-align: center; }
+.aligncenter img { margin: 0 auto; }
+figcaption { color: var(--muted); font-size: 0.9rem; margin-top: 0.5em; }
+.team-photo { margin-bottom: 80px; }
+
+/* Columns */
+.wp-block-columns {
+  display: flex;
+  gap: 2em;
+  margin-bottom: 1.75em;
+}
+.wp-block-column { flex: 1 1 0; min-width: 0; }
+.wp-block-column[style*="flex-basis"] { flex-grow: 0; }
+@media (max-width: 781px) {
+  .wp-block-columns { flex-wrap: wrap; }
+  .wp-block-column { flex-basis: 100% !important; }
+}
+
+/* Coach / roster cards */
+.roster-item .wp-block-columns { gap: 0; margin: 0; flex-wrap: nowrap; }
+.roster-item .wp-block-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.roster-item .wp-block-column:first-child { max-width: 140px; flex-basis: 140px !important; }
+.roster-item .wp-block-column:last-child { flex-basis: auto !important; flex-grow: 1; padding-left: 16px; }
+.roster-item h4 { margin: 0; }
+.roster-item p { margin: 0; color: #777; }
+.roster-item figure, .roster-item img { margin: 0; }
+.coach-bio { margin-top: -32px; margin-bottom: 80px; }
+
+/* Media & text */
+.wp-block-media-text {
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  align-items: center;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+.wp-block-media-text.has-media-on-the-right { grid-template-columns: 1fr 50%; }
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__media { order: 2; }
+.wp-block-media-text__media { margin: 0; }
+.wp-block-media-text__media img { display: block; width: 100%; }
+.wp-block-media-text.is-vertically-aligned-top { align-items: start; }
+@media (max-width: 600px) {
+  .wp-block-media-text,
+  .wp-block-media-text.has-media-on-the-right { grid-template-columns: 1fr; }
+  .wp-block-media-text.has-media-on-the-right .wp-block-media-text__media { order: 0; }
+}
+
+/* Tables */
+.wp-block-table { margin: 0 0 1.75em; overflow-x: auto; }
+.wp-block-table table { width: 100%; border-collapse: collapse; }
+.wp-block-table td,
+.wp-block-table th { border: 1px solid var(--border); padding: 0.5em 0.75em; vertical-align: top; }
+.wp-block-table thead { background: var(--bg-alt); }
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) { background: var(--bg-alt); }
+.wp-block-table.is-style-stripes td { border: 0; }
+
+/* Accordions (details/summary) */
+.wp-block-details summary {
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  font-weight: 600;
+  cursor: pointer;
+}
+.wp-block-details:last-of-type { border-bottom: 1px solid var(--border); }
+.wp-block-details > :not(summary) { margin-bottom: 1.25em; }
+
+/* File downloads */
+.wp-block-file { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 1.5em; }
+.wp-block-file object { display: none; }
+.wp-block-file__button { padding: 6px 18px; font-size: 0.9rem; }
+
+/* Misc */
+.wp-block-separator { border: 0; border-top: 1px solid var(--border); margin: 2.5em 0; }
+.wp-block-video video { width: 100%; }
+.wp-block-group { margin-bottom: 1.5em; }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--black);
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  padding: 80px 16px 48px;
+  font-size: 0.9rem;
+}
+.footer-logo { opacity: 0.3; margin-bottom: 16px; }
+.site-footer a { color: rgba(255, 255, 255, 0.75); }
+.site-footer a:hover { color: #fff; }
