@@ -16,11 +16,12 @@ Pushing to `main` builds and deploys to GitHub Pages via `.github/workflows/depl
 
 | What | File |
 |---|---|
-| Homepage (hero text, Instagram section) | `src/index.njk` |
+| Homepage (hero, philosophy, Instagram band) | `src/index.njk` |
+| Homepage program cards | `src/_data/programs.json` |
 | Every other page | `src/pages/<slug>.html` |
 | Old blog posts | `src/posts/<slug>.html` |
 | Top navigation menu | `src/_data/navigation.json` |
-| Club name, email, Instagram, shop link (used in header/footer) | `src/_data/site.json` |
+| Club name, email, Instagram, shop link, header button (`cta`), footer links (`footerLinks`) | `src/_data/site.json` |
 | Header, footer, `<head>` | `src/_includes/layouts/base.njk` |
 | All styling (colors, fonts, layout) | `src/css/style.css` |
 | Images | `src/images/` (referenced as `/images/<file>`) |
@@ -50,7 +51,9 @@ Each page is HTML with YAML front matter:
 ---
 title: "Coaches"
 permalink: "/coaches/"
-hideTitle: true      # optional: hide the big page title (page supplies its own headings)
+heading: "..."       # optional: page-header text if it should differ from title
+eyebrow: "..."       # optional: small green label above the heading (defaults to the nav dropdown, e.g. "About Us")
+intro: "..."         # optional: short lead paragraph under the heading
 description: "..."   # optional: meta description for search engines
 ---
 <p>Page content…</p>
@@ -63,7 +66,9 @@ description: "..."   # optional: meta description for search engines
 
 Content uses plain HTML plus a few CSS classes (kept from WordPress, styled in `style.css`). Copy an existing example when adding similar content:
 
-- **Coach card** (`coaches.html`): `.wp-block-columns > .wp-block-column.roster-item` containing a photo column and a name/title column.
+Every page gets a dark page-header band with its title automatically, so don't start page content with an `<h1>` or a repeat of the title.
+
+- **Coach / player card** (`coaches.html`, team pages): `.wp-block-columns > .wp-block-column.roster-item` containing a photo column and a name column (`<h4>` name, then `<p>` role shown in green, then optional `<p>` details). Photos are cropped to a circle automatically.
 - **Table** (rosters, tournament schedules, tryout times): `<figure class="wp-block-table"><table>…</table></figure>`. Edit rows directly.
 - **Image**: `<figure class="wp-block-image"><img src="/images/x.jpg" alt="Describe it" loading="lazy"></figure>`. Add `aligncenter` to center.
 - **Two columns**: `<div class="wp-block-columns"><div class="wp-block-column">…</div><div class="wp-block-column">…</div></div>` (stacks on mobile).
@@ -72,7 +77,7 @@ Content uses plain HTML plus a few CSS classes (kept from WordPress, styled in `
 - **Button**: `<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link" href="…">Label</a></div></div>`.
 - **Small green label above a heading**: `<h5>`.
 
-Headings `h2`/`h3` render in the uppercase Impact display style.
+`h2` renders in the uppercase Anton display style; `h3`/`h4` are bold Inter. Fonts (Anton + Inter) load from Google Fonts in `base.njk`.
 
 ## Editing guidelines
 

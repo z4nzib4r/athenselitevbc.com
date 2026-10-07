@@ -3,16 +3,68 @@ layout: layouts/base.njk
 title: Home
 bodyClass: home
 ---
-<section class="hero" style="background-image: url('/images/hero-bg-1.jpg');">
-  <div class="hero-content">
+<section class="hero">
+  <img class="hero-media" src="/images/hero-bg-1.jpg" alt="" width="1024" height="488" fetchpriority="high">
+  <div class="container hero-content">
+    <p class="eyebrow">Athens, Ohio</p>
     <h1>Building leaders through the sport of volleyball</h1>
-    <p>We are committed to cultivating the complete athlete, nurturing their physical, mental, and emotional well-being for success on and off the court.</p>
-    <a class="button" href="/our-philosophy/">Learn more</a>
+    <p class="hero-lede">We are committed to cultivating the complete athlete, nurturing their physical, mental, and emotional well-being for success on and off the court.</p>
+    <div class="hero-actions">
+      <a class="button" href="/tryouts-2/">Tryouts</a>
+      <a class="button button-ghost" href="/our-philosophy/">Learn more</a>
+    </div>
   </div>
 </section>
 
-<section class="container instagram-cta">
-  <h2>Follow us on Instagram!</h2>
-  <p>A premier volleyball club located in the heart of Athens, Ohio. See the latest from our teams, clinics, and events at <strong>@{{ site.instagramHandle }}</strong>.</p>
-  <a class="button" href="{{ site.instagram }}" target="_blank" rel="noopener">Follow @{{ site.instagramHandle }}</a>
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Programs</p>
+      <h2>Find your place on the court</h2>
+    </div>
+    <div class="card-grid">
+      {%- for program in programs %}
+      <a class="card" href="{{ program.url }}">
+        <span class="card-index">0{{ loop.index }}</span>
+        <h3>{{ program.title }}</h3>
+        <p>{{ program.text }}</p>
+        <span class="card-link">{{ program.link }} <span aria-hidden="true">&rarr;</span></span>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container split">
+    <div class="split-media">
+      <img src="/images/team-photo-1024x579.jpg" alt="Athens Elite team photo" width="1024" height="579" loading="lazy">
+    </div>
+    <div>
+      <p class="eyebrow">Our Philosophy</p>
+      <h2>Two pillars</h2>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>We empower our athletes to lead</h3>
+          <p>We equip our players with the skills, mindset, and resilience they need to succeed not only at the club, high school, and collegiate levels, but also in life beyond the game.</p>
+        </div>
+        <div class="pillar">
+          <h3>We foster a love for the game</h3>
+          <p>We believe the sport should bring joy. By nurturing gratitude and passion for the game, we create a positive environment where athletes grow, compete, and thrive.</p>
+        </div>
+      </div>
+      <a class="button button-ghost" href="/our-philosophy/">Read our philosophy</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container cta-band">
+    <div>
+      <p class="eyebrow">@{{ site.instagramHandle }}</p>
+      <h2>Follow us on Instagram</h2>
+      <p>See the latest from our teams, clinics, and events.</p>
+    </div>
+    <a class="button" href="{{ site.instagram }}" target="_blank" rel="noopener">Follow on Instagram</a>
+  </div>
 </section>

@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Club Teams",
+    "text": "Competitive travel teams from 11U to 18U at the Regional and American levels.",
+    "url": "/tryouts-2/",
+    "link": "Tryout info"
+  },
+  {
+    "title": "In-House League",
+    "text": "A club-prep league that bridges rec and club volleyball, without the travel commitment.",
+    "url": "/leagues/",
+    "link": "League details"
+  },
+  {
+    "title": "Beach",
+    "text": "The Summer Sand Series: high-repetition 2v2 training that builds ball control and volleyball IQ.",
+    "url": "/beach/",
+    "link": "Sand Series"
+  },
+  {
+    "title": "Lessons",
+    "text": "Private and small-group lessons tailored to each athlete's goals.",
+    "url": "/lessons/",
+    "link": "Book a lesson"
+  }
+]

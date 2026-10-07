@@ -7,5 +7,15 @@
   "instagram": "https://www.instagram.com/athens_elite/",
   "instagramHandle": "athens_elite",
   "shop": "https://athenselitevbc.myshopify.com/",
-  "location": "Athens, Ohio"
+  "location": "Athens, Ohio",
+  "cta": { "label": "Tryouts", "url": "/tryouts-2/" },
+  "footerLinks": [
+    { "title": "Our Philosophy", "url": "/our-philosophy/" },
+    { "title": "Coaches", "url": "/coaches/" },
+    { "title": "Tryouts", "url": "/tryouts-2/" },
+    { "title": "In-House League", "url": "/leagues/" },
+    { "title": "Beach", "url": "/beach/" },
+    { "title": "Lessons", "url": "/lessons/" },
+    { "title": "FAQ", "url": "/frequently-asked-questions/" }
+  ]
 }

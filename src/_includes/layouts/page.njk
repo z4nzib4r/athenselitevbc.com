@@ -1,7 +1,14 @@
 ---
 layout: layouts/base.njk
 ---
+{%- set kicker = eyebrow or (navigation | navParent(page.url)) %}
+<header class="page-header">
+  <div class="container">
+    {% if kicker %}<p class="eyebrow">{{ kicker }}</p>{% endif %}
+    <h1>{{ heading or title }}</h1>
+    {% if intro %}<p class="page-intro">{{ intro }}</p>{% endif %}
+  </div>
+</header>
 <article class="container content">
-  {% if not hideTitle %}<h1 class="page-title">{{ title }}</h1>{% endif %}
   {{ content | safe }}
 </article>

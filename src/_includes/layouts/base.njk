@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if title and page.url != "/" %}{{ title }} | {% endif %}{{ site.name }}</title>
   <meta name="description" content="{{ description or site.description }}">
+  <meta name="theme-color" content="#0a0a0a">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   <meta property="og:title" content="{{ title or site.name }}">
   <meta property="og:description" content="{{ description or site.description }}">
@@ -13,7 +14,7 @@
   <link rel="apple-touch-icon" href="/images/cropped-icon-1.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="{{ bodyClass }}">
@@ -22,9 +23,6 @@
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
       <a class="nav-logo" href="/"><img src="/images/athens-elite-logo.png" alt="{{ site.shortName }}" width="144" height="63"></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
-        <span class="nav-toggle-bar"></span><span class="visually-hidden">Menu</span>
-      </button>
       <ul class="nav-menu" id="main-menu">
         {%- for item in navigation %}
         {%- if item.children %}
@@ -40,7 +38,11 @@
         <li><a href="{{ item.url }}"{% if item.external %} target="_blank" rel="noopener"{% endif %}{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
         {%- endif %}
         {%- endfor %}
+        <li class="nav-cta-item"><a class="button button-sm" href="{{ site.cta.url }}">{{ site.cta.label }}</a></li>
       </ul>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
+        <span class="nav-toggle-bar"></span><span class="visually-hidden">Menu</span>
+      </button>
     </nav>
   </header>
 
@@ -49,36 +51,69 @@
   </main>
 
   <footer class="site-footer">
-    <img src="/images/athens-elite-logo.png" alt="{{ site.shortName }}" width="144" height="63" class="footer-logo">
-    <p>{{ site.name }} &middot; {{ site.location }}</p>
-    <p>
-      <a href="mailto:{{ site.email }}">{{ site.email }}</a> &middot;
-      <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a> &middot;
-      <a href="{{ site.shop }}" target="_blank" rel="noopener">Shop</a>
-    </p>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="/images/athens-elite-logo.png" alt="{{ site.shortName }}" width="144" height="63">
+        <p>{{ site.description }}</p>
+      </div>
+      <div>
+        <h2 class="footer-heading">Explore</h2>
+        <ul class="footer-links">
+          {%- for link in site.footerLinks %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-heading">Connect</h2>
+        <ul class="footer-links">
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li><a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram @{{ site.instagramHandle }}</a></li>
+          <li><a href="{{ site.shop }}" target="_blank" rel="noopener">Team Shop</a></li>
+          <li>{{ site.location }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; {{ year }} {{ site.name }}</p>
+    </div>
   </footer>
 
   <script>
     (function () {
+      var header = document.querySelector(".site-header");
       var toggle = document.querySelector(".nav-toggle");
       var menu = document.getElementById("main-menu");
+      var submenuToggles = document.querySelectorAll(".submenu-toggle");
+
+      function closeSubmenus(except) {
+        submenuToggles.forEach(function (b) { if (b !== except) b.setAttribute("aria-expanded", "false"); });
+      }
+
       toggle.addEventListener("click", function () {
         var open = toggle.getAttribute("aria-expanded") === "true";
         toggle.setAttribute("aria-expanded", String(!open));
         menu.classList.toggle("is-open", !open);
+        document.body.classList.toggle("menu-open", !open);
       });
-      document.querySelectorAll(".submenu-toggle").forEach(function (btn) {
+      submenuToggles.forEach(function (btn) {
         btn.addEventListener("click", function () {
           var open = btn.getAttribute("aria-expanded") === "true";
-          document.querySelectorAll(".submenu-toggle").forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
+          closeSubmenus(btn);
           btn.setAttribute("aria-expanded", String(!open));
         });
       });
       document.addEventListener("click", function (e) {
-        if (!e.target.closest(".has-submenu")) {
-          document.querySelectorAll(".submenu-toggle").forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
-        }
+        if (!e.target.closest(".has-submenu")) closeSubmenus();
       });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeSubmenus();
+      });
+
+      // Solidify the header once the page scrolls.
+      function onScroll() { header.classList.toggle("is-scrolled", window.scrollY > 8); }
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
     })();
   </script>
 </body>

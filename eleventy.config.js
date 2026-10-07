@@ -19,6 +19,16 @@ export default function (eleventyConfig) {
     })
   );
 
+  // Name of the nav dropdown a page lives under (e.g. "About Us"), shown above page titles.
+  eleventyConfig.addFilter("navParent", (navigation, url) => {
+    const parent = navigation.find((item) =>
+      (item.children || []).some((child) => child.url === url)
+    );
+    return parent ? parent.title : "";
+  });
+
+  eleventyConfig.addGlobalData("year", () => new Date().getFullYear());
+
   return {
     dir: { input: "src", output: "_site" },
     htmlTemplateEngine: "njk",
