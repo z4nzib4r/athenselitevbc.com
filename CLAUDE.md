@@ -25,6 +25,7 @@ Pushing to `main` builds and deploys to GitHub Pages via `.github/workflows/depl
 | Club name, email, Instagram, shop link, header button (`cta`), footer links (`footerLinks`) | `src/_data/site.json` |
 | Header, footer, `<head>` | `src/_includes/layouts/base.njk` |
 | All styling (colors, fonts, layout) | `src/css/style.css` |
+| Logo (vector, from the shirt logo artwork): white for dark backgrounds, black for light | `src/images/athens-elite-logo.svg`, `src/images/athens-elite-logo-black.svg` |
 | Images | `src/images/` (referenced as `/images/<file>`) |
 | PDFs / video | `src/files/` (referenced as `/files/<file>`) |
 

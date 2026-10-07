@@ -167,7 +167,7 @@ a:hover { color: var(--green-dark); }
   justify-content: space-between;
   gap: 24px;
 }
-.nav-logo img { display: block; width: 116px; height: auto; }
+.nav-logo img { display: block; width: 108px; height: auto; }
 
 .nav-menu {
   list-style: none;
