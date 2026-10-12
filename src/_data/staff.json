@@ -42,6 +42,13 @@
     "bio": []
   },
   {
+    "name": "Gabby Ortyl",
+    "role": "Head Coach",
+    "team": "13U",
+    "photo": "",
+    "bio": []
+  },
+  {
     "name": "Jeremy Lindauer",
     "role": "Head Coach",
     "team": "12 Regional",
@@ -81,13 +88,20 @@
     "bio": []
   },
   {
-    "name": "Jasmine",
+    "name": "Jasmine Arenas",
     "role": "Assistant Coach",
     "team": "14 Regional",
     "photo": "/images/jasmine-head-shot.jpg",
     "bio": [
       "Hi, I am Jasmine! I am a senior at Ohio University majoring in Early Childhood Education. I am from Columbus, Ohio, and come from a close-knit family. In my free time I enjoy spending time with loved ones, shopping, and listening to music. I am looking forward to a wonderful, fun-filled season with everyone."
     ]
+  },
+  {
+    "name": "Graci Back",
+    "role": "Assistant Coach",
+    "team": "13U",
+    "photo": "",
+    "bio": []
   },
   {
     "name": "Jacob Hittle",

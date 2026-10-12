@@ -23,7 +23,11 @@ permalink: "/coaches/"
   {%- for person in staff | rejectattr("featured") %}
   {%- set bioId = "bio-" + (person.name | slugify) %}
   <article class="staff-card">
+    {%- if person.photo %}
     <img class="staff-photo" src="{{ person.photo }}" alt="{{ person.name }}" loading="lazy">
+    {%- else %}
+    <div class="staff-photo staff-photo-empty" role="img" aria-label="Photo coming soon"><img src="/images/athens-elite-logo-black.svg" alt=""></div>
+    {%- endif %}
     <div class="staff-body">
       {% if person.team %}<span class="staff-team">{{ person.team }}</span>{% endif %}
       <h3>{{ person.name }}</h3>
