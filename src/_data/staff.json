@@ -42,17 +42,10 @@
     "bio": []
   },
   {
-    "name": "Mya Page",
-    "role": "Assistant Coach",
-    "team": "15 American",
-    "photo": "/images/dsc_9798-edit.webp",
-    "bio": []
-  },
-  {
-    "name": "Owen Adesso",
-    "role": "Assistant Coach",
-    "team": "18 Regional",
-    "photo": "/images/dsc_9874-edit_2.webp",
+    "name": "Gabby Ortyl",
+    "role": "Head Coach",
+    "team": "13U",
+    "photo": "",
     "bio": []
   },
   {
@@ -79,6 +72,36 @@
       "Fun fact: my favorite music genres are heavy metal, Christian, and Taylor Swift (yes she is her own genre).",
       "Personal interests: Reading psychological thrillers, trivia, attending Northbend Church with my family, and working out with my husband Joseph!"
     ]
+  },
+  {
+    "name": "Owen Adesso",
+    "role": "Assistant Coach",
+    "team": "18 Regional",
+    "photo": "/images/dsc_9874-edit_2.webp",
+    "bio": []
+  },
+  {
+    "name": "Mya Page",
+    "role": "Assistant Coach",
+    "team": "15 American",
+    "photo": "/images/dsc_9798-edit.webp",
+    "bio": []
+  },
+  {
+    "name": "Jasmine Arenas",
+    "role": "Assistant Coach",
+    "team": "14 Regional",
+    "photo": "/images/jasmine-head-shot.jpg",
+    "bio": [
+      "Hi, I am Jasmine! I am a senior at Ohio University majoring in Early Childhood Education. I am from Columbus, Ohio, and come from a close-knit family. In my free time I enjoy spending time with loved ones, shopping, and listening to music. I am looking forward to a wonderful, fun-filled season with everyone."
+    ]
+  },
+  {
+    "name": "Graci Back",
+    "role": "Assistant Coach",
+    "team": "13U",
+    "photo": "",
+    "bio": []
   },
   {
     "name": "Jacob Hittle",

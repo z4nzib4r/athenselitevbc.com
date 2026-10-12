@@ -914,6 +914,9 @@ figcaption { color: var(--muted); font-size: 0.875rem; margin-top: 0.75em; }
   object-position: top;
   background: var(--surface-2);
 }
+/* staff member without a photo yet: faint club logo instead */
+.staff-photo-empty { display: flex; align-items: center; justify-content: center; }
+.staff-photo-empty img { width: 45%; opacity: .18; }
 .staff-body { padding: 20px 22px 22px; }
 .staff-team {
   display: inline-block;
