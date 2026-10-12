@@ -42,20 +42,6 @@
     "bio": []
   },
   {
-    "name": "Mya Page",
-    "role": "Assistant Coach",
-    "team": "15 American",
-    "photo": "/images/dsc_9798-edit.webp",
-    "bio": []
-  },
-  {
-    "name": "Owen Adesso",
-    "role": "Assistant Coach",
-    "team": "18 Regional",
-    "photo": "/images/dsc_9874-edit_2.webp",
-    "bio": []
-  },
-  {
     "name": "Jeremy Lindauer",
     "role": "Head Coach",
     "team": "12 Regional",
@@ -79,6 +65,20 @@
       "Fun fact: my favorite music genres are heavy metal, Christian, and Taylor Swift (yes she is her own genre).",
       "Personal interests: Reading psychological thrillers, trivia, attending Northbend Church with my family, and working out with my husband Joseph!"
     ]
+  },
+  {
+    "name": "Owen Adesso",
+    "role": "Assistant Coach",
+    "team": "18 Regional",
+    "photo": "/images/dsc_9874-edit_2.webp",
+    "bio": []
+  },
+  {
+    "name": "Mya Page",
+    "role": "Assistant Coach",
+    "team": "15 American",
+    "photo": "/images/dsc_9798-edit.webp",
+    "bio": []
   },
   {
     "name": "Jacob Hittle",
