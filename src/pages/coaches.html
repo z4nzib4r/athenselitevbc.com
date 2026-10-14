@@ -29,7 +29,7 @@ permalink: "/coaches/"
     <div class="staff-photo staff-photo-empty" role="img" aria-label="Photo coming soon"><img src="/images/athens-elite-logo-black.svg" alt=""></div>
     {%- endif %}
     <div class="staff-body">
-      {% if person.team %}<span class="staff-team">{{ person.team }}</span>{% endif %}
+      {% if person.team %}<span class="staff-team">{% if person.teamUrl %}<a href="{{ person.teamUrl }}" target="_blank" rel="noopener">{{ person.team }}</a>{% else %}{{ person.team }}{% endif %}</span>{% endif %}
       <h3>{{ person.name }}</h3>
       <p class="staff-role">{{ person.role }}</p>
       {%- if person.bio.length %}
@@ -48,7 +48,7 @@ permalink: "/coaches/"
   <div class="bio-modal-inner">
     <img class="bio-modal-photo" src="{{ person.photo }}" alt="" loading="lazy">
     <div>
-      {% if person.team %}<span class="staff-team">{{ person.team }}</span>{% endif %}
+      {% if person.team %}<span class="staff-team">{% if person.teamUrl %}<a href="{{ person.teamUrl }}" target="_blank" rel="noopener">{{ person.team }}</a>{% else %}{{ person.team }}{% endif %}</span>{% endif %}
       <h3 id="bio-{{ person.name | slugify }}-name">{{ person.name }}</h3>
       <p class="staff-role">{{ person.role }}</p>
       <div class="bio-modal-text">
