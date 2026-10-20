@@ -511,6 +511,8 @@ a:hover { color: var(--green-dark); }
 .pillar { padding-left: 20px; border-left: 2px solid var(--green); }
 .pillar h3 { margin: 0 0 6px; color: #fff; font-size: 1.15rem; font-weight: 600; }
 .pillar p { margin: 0; font-size: 0.98rem; }
+.content .pillar h3 { margin: 0 0 6px; color: inherit; }
+.content .pillar p { margin: 0; }
 
 .cta-band {
   display: flex;
