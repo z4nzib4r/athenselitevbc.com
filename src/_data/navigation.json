@@ -18,7 +18,8 @@
       { "title": "18U Regional Level", "url": "/17u-regional/" },
       { "title": "15U American Level", "url": "/14u-regional/" },
       { "title": "14U Regional Level", "url": "/13u-regional/" },
-      { "title": "12U Regional Level", "url": "/12u-regional-level/" }
+      { "title": "12U Regional Level", "url": "/12u-regional-level/" },
+      { "title": "11U Regional Level", "url": "/11u-regional-level/" }
     ]
   },
   { "title": "In-House League", "url": "/leagues/" },
