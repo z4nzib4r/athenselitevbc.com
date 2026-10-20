@@ -44,7 +44,7 @@ look up the page by its `title:` or by the nav entry in `navigation.json`:
 - `13u-regional.html` → 14U Regional Level
 - `leagues.html` → In-House League
 
-Pages that exist but aren't in the nav (reachable only by direct link): `12u-regional-level`,
+Pages that exist but aren't in the nav (reachable only by direct link):
 `13u-level`, `16u-regional`, `15u-regional`, `15u-regional-new`, `15u-american`, `club-2`,
 `about`, `clinics`, `club-tryouts`, `summer-camp`, `pawpaw-festival`, `tryouts`, plus the 3 posts.
 `/shop/` redirects to the Shopify store.
