@@ -39,15 +39,16 @@ look up the page by its `title:` or by the nav entry in `navigation.json`:
 - `posts-page.html` → Sponsors (logos come from `sponsors.json`)
 - `behavior-guidelines.html` → Code of Conduct
 - `tryouts-2.html` → Tryouts (current); `tryouts.html` is an older Fall Tryouts page
-- `17u-regional.html` → 18U Regional Level
-- `14u-regional.html` → 15U American Level
-- `13u-regional.html` → 14U Regional Level
 - `leagues.html` → In-House League
 
 Pages that exist but aren't in the nav (reachable only by direct link):
-`13u-level`, `16u-regional`, `15u-regional`, `15u-regional-new`, `15u-american`, `club-2`,
+`13u-american-level`, `16u-regional`, `15u-regional`, `15u-regional-new`, `15u-american`, `club-2`,
 `about`, `clinics`, `club-tryouts`, `summer-camp`, `pawpaw-festival`, `tryouts`, plus the 3 posts.
 `/shop/` redirects to the Shopify store.
+
+Team pages use `<age>u-<level>-level` slugs (e.g. `15u-american-level`). Old team URLs that
+were renamed redirect via `src/_data/redirects.json` (rendered by `src/redirects.njk`); add an
+entry there whenever a permalink changes.
 
 ## Page file format
 

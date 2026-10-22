@@ -1,0 +1,6 @@
+[
+  { "from": "/17u-regional/", "to": "/18u-regional-level/", "title": "18U Regional Level" },
+  { "from": "/14u-regional/", "to": "/15u-american-level/", "title": "15U American Level" },
+  { "from": "/13u-regional/", "to": "/14u-regional-level/", "title": "14U Regional Level" },
+  { "from": "/13u-level/", "to": "/13u-american-level/", "title": "13U American Level" }
+]

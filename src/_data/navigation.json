@@ -15,9 +15,9 @@
     "title": "Club Teams",
     "children": [
       { "title": "Tryouts", "url": "/tryouts-2/" },
-      { "title": "18U Regional Level", "url": "/17u-regional/" },
-      { "title": "15U American Level", "url": "/14u-regional/" },
-      { "title": "14U Regional Level", "url": "/13u-regional/" },
+      { "title": "18U Regional Level", "url": "/18u-regional-level/" },
+      { "title": "15U American Level", "url": "/15u-american-level/" },
+      { "title": "14U Regional Level", "url": "/14u-regional-level/" },
       { "title": "12U Regional Level", "url": "/12u-regional-level/" },
       { "title": "11U Regional Level", "url": "/11u-regional-level/" }
     ]
