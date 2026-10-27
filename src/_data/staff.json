@@ -14,22 +14,6 @@
     "featured": true
   },
   {
-    "name": "Jessica Jones",
-    "role": "Mental Training Director",
-    "team": "Owner, North Texas Sports Counseling",
-    "teamUrl": "https://www.texomatherapeutics.com/",
-    "photo": "/images/jessica-jones-head-shot.jpg",
-    "bio": [
-      "Jessica Jones brings a lifelong passion for volleyball, extensive coaching experience, and a commitment to mental health and athlete development to her work with <a href=\"https://www.texomatherapeutics.com/\" target=\"_blank\" rel=\"noopener\">North Texas Sports Counseling</a> and Coaching.",
-      "Her volleyball journey began with collegiate competition at Division I schools Ohio University and Florida International University (FIU). During her senior year at FIU, she was voted team captain, recognizing her leadership and dedication. She also earned All-Tournament Team honors at the University of New Hampshire tournament.",
-      "Following her collegiate career, Jessica continued competing in beach volleyball, participating in events through the AVP, CBVA, NVL, and various local tournaments throughout California. Her experiences as both an indoor and beach volleyball athlete have given her an appreciation for the physical, mental, and emotional demands of competitive sports.",
-      "With coaching experience across club programs in Ohio, Florida, Nevada, California, and Texas, Jessica has dedicated years to helping athletes develop their skills, confidence, and love for the game. She also founded Quicksand Beach Volleyball Club, reflecting her commitment to growing the sport and creating opportunities for athletes to learn and compete.",
-      "Beyond volleyball, Jessica is a Licensed Professional Counselor Associate (LPC-A) practicing under supervision and a Licensed Chemical Dependency Counselor Intern (LCDC-I). Through <a href=\"https://www.texomatherapeutics.com/\" target=\"_blank\" rel=\"noopener\">North Texas Sports Counseling</a>, she is passionate about supporting athletes’ mental and emotional well-being while helping them navigate the unique challenges of competitive athletics.",
-      "She believes the mental side of the game is just as important as physical skills and strategy. Developing confidence, managing performance anxiety, responding constructively to mistakes, navigating team dynamics, and building resilience are essential components of both athletic and personal growth.",
-      "Through her work, Jessica hopes to help athletes strengthen their mental game, recognize their potential, and develop tools they can carry beyond the court. Her goal is to support athletes not only in becoming stronger competitors, but also in becoming confident, resilient, well-rounded individuals."
-    ]
-  },
-  {
     "name": "Anne Sowers",
     "role": "18U Head Coach",
     "team": "",
@@ -118,5 +102,21 @@
     "team": "",
     "photo": "",
     "bio": []
+  },
+  {
+    "name": "Jessica Jones",
+    "role": "Mental Training Director",
+    "team": "Owner, North Texas Sports Counseling",
+    "teamUrl": "https://www.texomatherapeutics.com/",
+    "photo": "/images/jessica-jones-head-shot.jpg",
+    "bio": [
+      "Jessica Jones brings a lifelong passion for volleyball, extensive coaching experience, and a commitment to mental health and athlete development to her work with <a href=\"https://www.texomatherapeutics.com/\" target=\"_blank\" rel=\"noopener\">North Texas Sports Counseling</a> and Coaching.",
+      "Her volleyball journey began with collegiate competition at Division I schools Ohio University and Florida International University (FIU). During her senior year at FIU, she was voted team captain, recognizing her leadership and dedication. She also earned All-Tournament Team honors at the University of New Hampshire tournament.",
+      "Following her collegiate career, Jessica continued competing in beach volleyball, participating in events through the AVP, CBVA, NVL, and various local tournaments throughout California. Her experiences as both an indoor and beach volleyball athlete have given her an appreciation for the physical, mental, and emotional demands of competitive sports.",
+      "With coaching experience across club programs in Ohio, Florida, Nevada, California, and Texas, Jessica has dedicated years to helping athletes develop their skills, confidence, and love for the game. She also founded Quicksand Beach Volleyball Club, reflecting her commitment to growing the sport and creating opportunities for athletes to learn and compete.",
+      "Beyond volleyball, Jessica is a Licensed Professional Counselor Associate (LPC-A) practicing under supervision and a Licensed Chemical Dependency Counselor Intern (LCDC-I). Through <a href=\"https://www.texomatherapeutics.com/\" target=\"_blank\" rel=\"noopener\">North Texas Sports Counseling</a>, she is passionate about supporting athletes’ mental and emotional well-being while helping them navigate the unique challenges of competitive athletics.",
+      "She believes the mental side of the game is just as important as physical skills and strategy. Developing confidence, managing performance anxiety, responding constructively to mistakes, navigating team dynamics, and building resilience are essential components of both athletic and personal growth.",
+      "Through her work, Jessica hopes to help athletes strengthen their mental game, recognize their potential, and develop tools they can carry beyond the court. Her goal is to support athletes not only in becoming stronger competitors, but also in becoming confident, resilient, well-rounded individuals."
+    ]
   }
 ]
